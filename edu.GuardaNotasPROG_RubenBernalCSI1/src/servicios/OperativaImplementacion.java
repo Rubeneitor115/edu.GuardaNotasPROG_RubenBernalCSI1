@@ -4,6 +4,8 @@
 
 package servicios;
 
+import controladores.Inicio;
+
 /**
  * Implementación de la interfaz operativa de la aplicación
  * @author rbr
@@ -32,6 +34,20 @@ public class OperativaImplementacion implements OperativaInterfaz{
 		
 		System.out.println("_");
 		
+	}
+
+	/**
+	 * Método para añadir la nota obtenida por el usuario
+	 * @param double nota
+	 * @return double nota
+	 * 01/12/25
+	 */
+	public double anyadirNota(double nota) {
+		
+		System.out.println("Introduce la nota: ");
+		nota = Inicio.sc.nextDouble();
+		
+		return nota;
 	}
 
 }

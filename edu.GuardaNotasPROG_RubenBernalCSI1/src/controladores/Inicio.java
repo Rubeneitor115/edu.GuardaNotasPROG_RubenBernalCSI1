@@ -18,6 +18,8 @@ import servicios.OperativaInterfaz;
  */
 public class Inicio {
 	
+	public static Scanner sc = new Scanner(System.in);
+	
 	/**
 	 * Método de entrada de la aplicación
 	 * @author rbr
@@ -26,17 +28,21 @@ public class Inicio {
 	 */
 	public static void main(String[] args) {
 		
+		//Variables
 		double nota = 0;
 		byte opcion;
 		boolean cerrarMenu = false;
-		Scanner sc = new Scanner(System.in);
 		
+		//Interfaces con sus implementaciones
 		MenuInterfaz mi = new MenuImplementacion();
 		OperativaInterfaz oi = new OperativaImplementacion();
 		
 		do {
+			//Muestro el menu por pantalla
 			mi.mostrarMenu();
+			//Recojo la opcion deseada por el usuario
 			opcion = sc.nextByte();
+			//Accedo a la opcion seleccionada por el usuario
 			switch(opcion) {
 				case 1:
 					System.out.println("Cerrando aplicación...");
@@ -44,8 +50,7 @@ public class Inicio {
 					System.out.println("Aplicación cerrada correctamente!!");
 					break;
 				case 2:
-					System.out.println("Introduce la nota: ");
-					nota = sc.nextDouble();
+					nota = oi.anyadirNota(nota);
 					break;
 				case 3:
 					oi.dibujarGrafica(nota);
@@ -57,6 +62,7 @@ public class Inicio {
 			}
 		}while(!cerrarMenu);
 
+		//Cierro la variable Scanner
 		sc.close();
 	}
 

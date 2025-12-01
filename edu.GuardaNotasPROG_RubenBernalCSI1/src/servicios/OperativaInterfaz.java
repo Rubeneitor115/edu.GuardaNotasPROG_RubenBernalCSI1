@@ -12,9 +12,10 @@ package servicios;
 public interface OperativaInterfaz {
 
 	/**
-	 * Enunciado del método que tendrá la implementación
+	 * Enunciados de los métodos que tendrá la implementación
 	 * @author rbr
 	 * 01/12/25
 	 */
+	public double anyadirNota(double nota);
 	public void dibujarGrafica(double nota);
 }
